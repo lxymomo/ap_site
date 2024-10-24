@@ -1,0 +1,340 @@
+:root {
+    --accent-color: #AFC77C;
+    --accent-glow: rgba(175, 199, 124, 0.3);
+    --bg-dark: #0a0a0a;
+    --bg-darker: #050505;
+    --nav-bg: rgba(20, 20, 20, 0.8);
+    --text-primary: #ffffff;
+    --text-secondary: #888888;
+    --border-color: rgba(175, 199, 124, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-darker);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 左侧导航 */
+.sidebar {
+    width: 280px;
+    background: var(--bg-dark);
+    border-right: 1px solid var(--border-color);
+    padding: 20px;
+    position: fixed;
+    height: calc(100vh - 60px); /* 减去footer高度 */
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-glow);
+    margin-bottom: 20px;
+}
+
+.search-box {
+    background: rgba(175, 199, 124, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    outline: none;
+    font-size: 14px;
+}
+
+.search-box .shortcut {
+    color: var(--text-secondary);
+    font-size: 12px;
+    padding: 2px 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* 导航树样式 */
+.nav-section {
+    margin-bottom: 15px;
+}
+
+.nav-header {
+    padding: 8px 12px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.nav-header:hover {
+    background: rgba(175, 199, 124, 0.1);
+    color: var(--accent-color);
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.nav-header.active .toggle-icon {
+    transform: rotate(90deg);
+}
+
+.nav-content {
+    margin-left: 12px;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    height: 0;
+}
+
+.nav-content.show {
+    height: auto;
+}
+
+.nav-item {
+    padding: 8px 12px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 6px;
+    margin: 2px 0;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    background: rgba(175, 199, 124, 0.1);
+    color: var(--accent-color);
+}
+
+.nav-item.active {
+    background: rgba(175, 199, 124, 0.15);
+    color: var(--accent-color);
+    border-left: 3px solid var(--accent-color);
+}
+
+/* 主内容区 */
+.main-content {
+    flex: 1;
+    margin-left: 280px;
+    padding: 40px;
+    min-height: calc(100vh - 60px);
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+    position: relative;
+    z-index: 1;
+}
+
+.content-header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.content-header h1 {
+    font-size: 24px;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.content-body {
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+.content-body ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.content-body li {
+    margin: 8px 0;
+}
+
+
+/* 页脚样式 */
+.footer {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    background: #262129;
+    padding: 24px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pixel-font {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 0px #000000;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+.brand-desc {
+    color: #888;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-section h3 {
+    color: var(--accent-color);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.footer-section a {
+    color: #888;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.8;
+    transition: all 0.2s ease;
+}
+
+.footer-section a:hover {
+    color: #f4f4f5;
+    transform: translateX(4px);
+}
+
+.social-links {
+    display: flex;
+    gap: 8px;
+}
+
+.social-link {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: #888;
+    transition: all 0.2s ease;
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f4f4f5;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+    color: #666;
+    font-size: 12px;
+}
+
+.legal-links {
+    display: flex;
+    gap: 24px;
+}
+
+.legal-links a {
+    color: #666;
+    font-size: 12px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.legal-links a:hover {
+    color: #f4f4f5;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .footer-main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-280px);
+        transition: transform 0.3s ease;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+    
+    .legal-links {
+        justify-content: center;
+    }
+}

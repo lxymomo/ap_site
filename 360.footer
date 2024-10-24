@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AlphaPilot</title>
+    <!-- 通过link标签引入Press Start 2P字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .pixel-logo {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 30px;
+            color: #AFC77C;
+            text-shadow: 2px 2px 0px #000000;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        .footer-theme-a {
+            background: #262129;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .footer-theme-a .f-top {
+            display: flex;
+            margin: 0px;
+            justify-content: space-between;
+            padding: 30px 0px;
+        }
+
+        .footer-theme-a .f-top .w-33 {
+            flex: 0 0 33%;
+            color: #A0A0AA;
+        }
+
+        .footer-theme-a .f-top .w-18 {
+            flex: 0 0 18%;
+            padding: 0px 0px 0px 20px;
+            color: #A0A0AA;
+        }
+
+        .footer-theme-a .f-top .section-title {
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #F4F4F5;
+            font-size: 0.9375rem;
+            padding: 0px 0px 10px 0px;
+        }
+
+        .footer-theme-a .f-top .theme-a-menu {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        .footer-theme-a .f-top .theme-a-menu li {
+            display: block;
+            width: 100%;
+            font-size: 0.875rem;
+            margin-bottom: 10px;
+            /* 添加间距替代float */
+        }
+
+        .footer-theme-a .f-top .theme-a-menu li a {
+            display: inline-block;
+            color: #A0A0AA;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .footer-theme-a .f-top .theme-a-menu li a:hover {
+            text-decoration: underline;
+            color: #959496;
+        }
+
+        .footer-theme-a .f-top .brand-logo {
+            padding: 15px 0px;
+        }
+
+        .footer-theme-a .f-top .brand-description {
+            font-size: 0.8125rem;
+            margin: 0px;
+            padding: 10px 15px 0px 0px;
+            line-height: 140%;
+        }
+
+        .footer-theme-a .f-top .brand-social-connect {
+            margin: 0px;
+            padding: 15px 0px 0px 0px;
+            clear: both;
+        }
+
+        .footer-theme-a .f-top .brand-social-connect ul {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-theme-a .f-top .brand-social-connect ul li {
+            margin: 0;
+        }
+
+        .footer-theme-a .f-top .brand-social-connect ul li a {
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 3px;
+            background: #342e38;
+            color: #ababab;
+            text-decoration: none;
+            text-align: center;
+            line-height: 30px;
+            transition: background 0.3s;
+        }
+
+        .footer-theme-a .f-top .brand-social-connect ul li a:hover {
+            background: #151317;
+        }
+
+        .footer-theme-a .f-bottom {
+            border-top: #38353a solid 1px;
+            padding: 10px 0px;
+            display: flex;
+            font-size: 0.8125rem;
+            color: #D1D1D6;
+            flex-wrap: wrap;
+            /* 允许换行 */
+            justify-content: space-between;
+        }
+
+        .footer-theme-a .f-bottom .f-bottom-l {
+            flex: 0 0 35%;
+        }
+
+        .footer-theme-a .f-bottom .f-bottom-r {
+            flex: 0 0 65%;
+            text-align: right;
+        }
+
+        .footer-theme-a .f-bottom .f-bottom-r ul {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .footer-theme-a .f-bottom .f-bottom-r ul li {
+            /* 已使用flex布局，不需要inline-block */
+        }
+
+        .footer-theme-a .f-bottom .f-bottom-r ul li a {
+            color: #D1D1D6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-theme-a .f-bottom .f-bottom-r ul li a:hover {
+            text-decoration: underline;
+            color: #767377;
+        }
+
+        @media (max-width: 991px) {
+            .footer-theme-a .f-top {
+                flex-direction: column;
+                padding: 30px 0px;
+            }
+
+            .footer-theme-a .f-top .w-33,
+            .footer-theme-a .f-top .w-18 {
+                width: 100%;
+                padding: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .footer-theme-a .f-top .brand-social-connect ul {
+                justify-content: center;
+            }
+
+            .footer-theme-a .f-bottom {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-theme-a .f-bottom .f-bottom-r {
+                text-align: center;
+            }
+
+            .footer-theme-a .f-bottom .f-bottom-r ul {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="footer-theme-a">
+        <div class="container">
+            <div class="f-top">
+                <div class="w-33">
+                    <div class="pixel-logo">ALPHAPILOT</div>
+                    <div class="brand-description">AI驱动的量化交易辅助系统</div>
+                </div>
+                <div class="w-18">
+                    <div class="section-title">产品</div>
+                    <ul class="theme-a-menu">
+                        <li><a href="#">策略</a></li>
+                        <li><a href="#">定价</a></li>
+                        <li><a href="#">移动应用</a></li>
+                    </ul>
+                </div>
+                <div class="w-18">
+                    <div class="section-title">公司</div>
+                    <ul class="theme-a-menu">
+                        <li><a href="#">招聘信息</a></li>
+                        <li><a href="mailto:help@alphapilot.tech">help@alphapilot.tech</a></li>
+                    </ul>
+                </div>
+                <div class="w-18">
+                    <div class="section-title">支持</div>
+                    <ul class="theme-a-menu">
+                        <li><a href="#">文档</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="w-18">
+                    <div class="section-title">关注我们</div>
+                    <div class="brand-social-connect">
+                        <ul>
+                            <li class="twitter"><a href="https://x.com/AlphaPilotHQ" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                            <li class="wechat"><a href="#" aria-label="WeChat"><i class="fab fa-weixin"></i></a></li>
+                            <li class="telegram"><a href="https://t.me/AlphaPilotClub/1" aria-label="Telegram"><i class="fab fa-telegram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="f-bottom">
+                <div class="f-bottom-l">© 2024 AlphaPilot, Inc. 保留所有权利</div>
+                <div class="f-bottom-r">
+                    <ul>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
