@@ -1,3 +1,29 @@
+function copyWeChatID() {
+    const wechatID = "AlphaPilot_bot";
+    
+    // 创建临时输入框来实现复制功能
+    const tempInput = document.createElement("input");
+    tempInput.value = wechatID;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+
+    // 创建并显示提示信息
+    const notification = document.createElement("div");
+    notification.className = "copy-notification";
+    notification.textContent = "微信号已复制";
+    document.body.appendChild(notification);
+
+    // 1.5秒后移除提示
+    setTimeout(() => {
+        notification.classList.add("fade-out");
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 300);
+    }, 1500);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // 导航树展开/收起功能
     const navHeaders = document.querySelectorAll('.nav-header');
@@ -71,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     mainContent.innerHTML = `
                         <div class="loading-indicator">
                             <div class="spinner"></div>
-                            <div>加载中...</div>
+                            <div>Loading...</div>
                         </div>
                     `;
 
